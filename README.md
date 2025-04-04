@@ -59,6 +59,7 @@ Vamos a adentrarnos ligeramente en cada una de las subcarpetas que forman esta:
   Son la base del proyecto, sin los sprites no se podría hacer un juego. Son como se ven los objetos, lo que da vida al proyecto. Podemos encontrar todo lo que podemos ver en el juego: Personajes, suelos, arbustos...
 
 ![Imagen Sprite](ImagenesREADMEDig/SPRITE.PNG)
+
 _Imagen que muestra el sprite con el que se hizo el mundo._
 
 ---
@@ -80,6 +81,7 @@ Cada escena está compuesta por nodos, que son como las funciones o utilidades q
 Además, aparece en la consola de Godot que has muerto.
 
 ![Imagen Killzone](ImagenesREADMEDig/KILLZONE.PNG)
+
 _Imagen que se muestra el mensaje por consola cuando muere el personaje._
 
 * music.tscn
@@ -100,6 +102,7 @@ La característica escena del personaje jugable.
   2. También se añaden las colisiones principales del personaje, que son las mismas que en la escena _game.tscn_.
 
 ![Imagen Knight](ImagenesREADMEDig/KNIGHT.PNG)
+
 _Imagen que muestra el conjunto de sprites que tiene el personaje principal._
 
 * slime.tscn
@@ -127,6 +130,7 @@ Esta es con diferencia la escena más compleja y larga. Veamos sus funciones y c
 8. Por último, también se observan las etiquetas que hay a lo largo del camino, que se pueden editar en el panel de la derecha el texto.
 
 ![Imagen Label](ImagenesREADMEDig/LABEL.PNG)
+
 _Imagen de una etiqueta dentro del juego._
 
 ---
@@ -151,6 +155,7 @@ En esta carpeta se encuentra las especificaciones de algunas mecánicas del jueg
      1. El mensaje que saldrá al final del nivel con el recuento de monedas será igual a la condición en la que se encuentre presente la variable.
   
 ![Imagen ScoreLabel](ImagenesREADMEDig/SCORELABEL.PNG)
+
 _Imagen de la etiqueta final, mostrando progreso en la recogida de monedas._
 
 * killzone.gd
@@ -212,6 +217,7 @@ Vamos a ver por encima cómo trabajar con él:
 4. Los personajes y monedas se encuentran en la layer _"Background"_. El resto del mapa, en _"Mid"_.
 
 ![Imagen Colisiones](ImagenesREADMEDig/COLISIONES.PNG)
+
 _Imagen que muestra la creación de colisiones para los puentes._
 
 ___
