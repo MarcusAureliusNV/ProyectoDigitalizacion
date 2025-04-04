@@ -7,14 +7,15 @@ El índice lo he separado en carpetas dentro del proyecto.
 ---
 
 
-## Contenidos del proyecto:
-#### 1. Resumen general
-#### 2. assets
-#### 3. scenes
-#### 4. scripts
-#### 5. .godot
-#### 6. Interfaz 2D
-#### 7. Conclusión
+|Contenidos del proyecto|
+|-----------------------|
+|1. Resumen|
+|2. assets|
+|3. scenes|
+|4. scripts|
+|5. .godot|
+|6. Interfaz 2D|
+|7. Conclusión|
 
 ***
 
@@ -24,15 +25,15 @@ Es un proyecto simple en el que se controla a un personaje a través de un peque
 
 * Movimiento
 
- El movimiento es algo sencillo, se usa las flechas del teclado para mover al personaje y la tecla espacio para saltar. Las monedas se recogen al interactuar físicamente con ellas, o sea que las dos colisiones choquen entre sí.
+ El movimiento es algo sencillo, se usa las flechas del teclado para mover al personaje y la tecla espacio para saltar. Las monedas **se recogen al interactuar** físicamente con ellas, o sea que las dos colisiones choquen entre sí.
   
 * Cámara
 
-El movimiento de la cámara es algo peculiar, ya que sigue al jugador pero con un pequeño retardo para darle ese efecto de "Realismo 2D" que se emplea en tantos juegos Scroller.
+El movimiento de la cámara es algo peculiar, ya que sigue al jugador pero con un pequeño retardo para darle ese efecto de _Realismo 2D_ que se emplea en tantos juegos _Scroller_.
 
 * Línea de muerte
 
-Se encuentra en los confines del mapa para que cuando el personaje lo pise, lo devuelva al principio del nivel y se reinicie todo, como si 'hubiera perdido una vida'.
+Se encuentra en los confines del mapa para que cuando el personaje lo pise, **lo devuelva** al principio del nivel y se reinicie todo, como si 'hubiera perdido una vida'.
 
 ___
 
@@ -48,7 +49,7 @@ Vamos a adentrarnos ligeramente en cada una de las subcarpetas que forman esta:
 
 * music
 
-  Considero que se sobreentiende; esta carpeta contiene el "Soundtrack", o "Banda Sonora" del juego. Como es de esperar, se encuentra en un _.mp3_, extensión de audio mundialmente conocida y, al ser un proyecto simple, no he visto menester añadir más de uno.
+  Considero que se sobreentiende; esta carpeta contiene el _Soundtrack_, o _Banda Sonora_ del juego. Como es de esperar, se encuentra en un _.mp3_, extensión de audio mundialmente conocida y, al ser un proyecto simple, no he visto menester añadir más de uno.
 
 * sounds
 
@@ -60,14 +61,16 @@ Vamos a adentrarnos ligeramente en cada una de las subcarpetas que forman esta:
 
 ![Imagen Sprite](ImagenesREADMEDig/SPRITE.PNG)
 
+~~~
 _Imagen que muestra el sprite con el que se hizo el mundo._
+~~~
 
 ---
 
 
 ## 3. scenes
 
-Ya aquí entramos en algo más técnico. En las escenas es donde cogemos todos nuestros recursos y los plantamos al nivel. Una escena es un objeto. Un objeto puede ser cualquier cosa, incluido el nivel en sí. 
+Ya aquí entramos en algo más técnico. En las escenas es donde cogemos todos nuestros recursos y los plantamos al nivel. **Una escena es un objeto**. Un objeto puede ser cualquier cosa, incluido el nivel en sí. 
 Cada escena está compuesta por nodos, que son como las funciones o utilidades que tiene esta escena. Vamos a ver qué contiene cada archivo aquí (todos son _.tscn_).
 
 
@@ -82,7 +85,9 @@ Además, aparece en la consola de Godot que has muerto.
 
 ![Imagen Killzone](ImagenesREADMEDig/KILLZONE.PNG)
 
+~~~
 _Imagen que se muestra el mensaje por consola cuando muere el personaje._
+~~~
 
 * music.tscn
 
@@ -90,7 +95,7 @@ Meramente se encuentra la propiedad _Music_, que habilita la inserción de audio
 
 * platform.tscn
 
-Es la escena para la plataforma que se mueve dentro del nivel. 
+Es la escena para la plataforma que se mueve dentro del nivel. Existe esta versión y otra inmóvil.
   1. Su colisión, a diferencia de la del jugador, es rectangular.
   2. Además, tiene la función 'Platform' activa la posibilidad de poder bajarte de la plataforma atravesándola, o sea, desactivando su colisión en un recuadro (que coincide con la colisión base).
 
@@ -103,11 +108,13 @@ La característica escena del personaje jugable.
 
 ![Imagen Knight](ImagenesREADMEDig/KNIGHT.PNG)
 
+~~~
 _Imagen que muestra el conjunto de sprites que tiene el personaje principal._
+~~~
 
 * slime.tscn
 
-  Aquí está el enemigo del personaje: el Slime. Dentro de su escena, podemos encontrarnos algún que otro nodo interesante:
+  Aquí está el enemigo del personaje: **el Slime**. Dentro de su escena, podemos encontrarnos algún que otro nodo interesante:
 1. Copia el sprite animado del personaje.
 2. Añade una pequeña killzone dentro de su colisión, para cuando toque al humano, muera.
 3. Añade dos nodos: RayCastLeft y RayCastRight. Estos hacen que cuando se esté moviendo el enemigo y colisione con una pared, se gire y siga su rumbo.
@@ -120,18 +127,23 @@ _Imagen que muestra el conjunto de sprites que tiene el personaje principal._
 
 Ya hemos mencionado que todo lo que se ve, es un objeto, luego una escena. Esta escena es la más importante de todas, sin ella no se puede ejecutar el juego. 
 Esta es con diferencia la escena más compleja y larga. Veamos sus funciones y características:
-1. Maneja una etiqueta llamada _ScoreLabel_ en la que hace el recuento de cuántas monedas ha recogido el personaje al final del nivel.
-2. Tiene una funcionalidad en la que se permite trabajar con los sprites del mapa. Están puestos de forma compacta para que luego se editen en el apartado 2D.
-3. Tiene el nodo de la cámara que sigue al jugador con un pequeño retardo.
-4. Tiene la colisión rectangular de la Killzone.
-5. Tiene la referencia al _Script_ de todas las monedas. Por cada moneda, hay que crear uno nuevo, por eso hay 9.
-6. Contiene las colisiones y el movimiento de las plataformas. Hay una estática al principio, y otra que se mueve horizontalmente.
-7. Añade la referencia al Slime, el cuál se explica más detalladamente en su propia escena.
-8. Por último, también se observan las etiquetas que hay a lo largo del camino, que se pueden editar en el panel de la derecha el texto.
+
+|Nodos de game.tscn|
+|-----------------------|
+|1. Maneja una etiqueta llamada _ScoreLabel_ en la que hace el recuento de cuántas monedas ha recogido el personaje al final del nivel.|
+|2. Tiene una funcionalidad en la que se permite trabajar con los sprites del mapa. Están puestos de forma compacta para que luego se editen en el apartado 2D.|
+|3. Tiene el nodo de la cámara que sigue al jugador con un pequeño retardo.|
+|4. Tiene la colisión rectangular de la Killzone.|
+|5. Tiene la referencia al _Script_ de todas las monedas. Por cada moneda, hay que crear uno nuevo, por eso hay 9.|
+|6. Contiene las colisiones y el movimiento de las plataformas. Hay una estática al principio, y otra que se mueve horizontalmente.|
+|7. Añade la referencia al Slime, el cuál se explica más detalladamente en su propia escena.|
+|8. Por último, también se observan las etiquetas que hay a lo largo del camino, que se pueden editar en el panel de la derecha el texto.|
 
 ![Imagen Label](ImagenesREADMEDig/LABEL.PNG)
 
+~~~
 _Imagen de una etiqueta dentro del juego._
+~~~
 
 ---
 
@@ -156,7 +168,9 @@ En esta carpeta se encuentra las especificaciones de algunas mecánicas del jueg
   
 ![Imagen ScoreLabel](ImagenesREADMEDig/SCORELABEL.PNG)
 
+~~~
 _Imagen de la etiqueta final, mostrando progreso en la recogida de monedas._
+~~~
 
 * killzone.gd
 
@@ -170,14 +184,14 @@ Esta función va a afectar al nodo _CharacterBody2D_. Tiene una gran función co
 1. Proporciona una velocidad y fuerza de salto al personaje.
 2. La variable _gravity_, principalmente recoge la gravedad fijada por el sistema de Godot y lo almacena.
 3. La función _physics_process_ está compuesta de:
-     1. Primero, calcula la gravedad del personaje cuando está en caída.
-     2. Segundo, cuando se presiona el boton de salto, la velocidad en _'y'_ cambia a la velocidad de salto.
-     3. Cuando se presiona la flecha izquierda o derecha, se cambia la dirección del personaje en la que se mueve.
-     4. Hace que cuando se cambie la dirección (con la función de arriba), se gire el sprite también.
-     5. Cuando el personaje cambie de estado (idle, corriendo, saltando), su sprite cambie.
-     6. Aplica la velocidad al personaje al moverse.
-     7. Aplica la velocidad calculada y maneja colisiones automáticamente. 
-          1. Es necesario porque si no, no harían nada las colisiones.
+    > Primero, calcula la gravedad del personaje cuando está en caída.
+    > Segundo, cuando se presiona el boton de salto, la velocidad en _'y'_ cambia a la velocidad de salto.
+    > Cuando se presiona la flecha izquierda o derecha, se cambia la dirección del personaje en la que se mueve.
+    > Hace que cuando se cambie la dirección (con la función de arriba), se gire el sprite también.
+    > Cuando el personaje cambie de estado (idle, corriendo, saltando), su sprite cambie.
+    > Aplica la velocidad al personaje al moverse.
+    > Aplica la velocidad calculada y maneja colisiones automáticamente. 
+          >> Es necesario porque si no, no harían nada las colisiones.
 
 
   * slime.gd
@@ -209,17 +223,18 @@ Es un nodo que hay en game.tscn: TileMap. Cuando seleccionamos éste, en el mapa
 
 Vamos a ver por encima cómo trabajar con él:
 
-1. Primero hay que centrar el _grid_ para que se adecúe al tamaño de nuestros sprites cuadrados.
-2. Cuando seleccionemos un bloque, al hacer click en el mapa, se pondrá automáticamente.
-3. ¿Cómo se añaden colisiones? En la parte inferior se encuentran las palabras _TileSet_ y _TileMap_.
-     1. Dentro de _TileSet_, podemos **pintar** las colisiones a aquellos bloques que queremos que se puedan pisar.
-     2. Se pueden modificar los tamaños y las formas, para que por ejemplo el puente sea más fino.
-4. Los personajes y monedas se encuentran en la layer _"Background"_. El resto del mapa, en _"Mid"_.
+> Primero hay que centrar el _grid_ para que se adecúe al tamaño de nuestros sprites cuadrados.
+> Cuando seleccionemos un bloque, al hacer click en el mapa, se pondrá automáticamente.
+> ¿Cómo se añaden colisiones? En la parte inferior se encuentran las palabras _TileSet_ y _TileMap_.
+     >> Dentro de _TileSet_, podemos **pintar** las colisiones a aquellos bloques que queremos que se puedan pisar.
+     >> Se pueden modificar los tamaños y las formas, para que por ejemplo el puente sea más fino.
+> Los personajes y monedas se encuentran en la layer _"Background"_. El resto del mapa, en _"Mid"_.
 
 ![Imagen Colisiones](ImagenesREADMEDig/COLISIONES.PNG)
 
+~~~
 _Imagen que muestra la creación de colisiones para los puentes._
-
+~~~
 ___
 
 
