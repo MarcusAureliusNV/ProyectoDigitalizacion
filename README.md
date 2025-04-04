@@ -58,7 +58,7 @@ Vamos a adentrarnos ligeramente en cada una de las subcarpetas que forman esta:
 
   Son la base del proyecto, sin los sprites no se podría hacer un juego. Son como se ven los objetos, lo que da vida al proyecto. Podemos encontrar todo lo que podemos ver en el juego: Personajes, suelos, arbustos...
 
-![Texto alternativo](/ImagenesREADMEDig/SPRITE.png)
+![Imagen Sprite](/ImagenesREADMEDig/SPRITE.png)
 
 ---
 
@@ -78,7 +78,7 @@ Cada escena está compuesta por nodos, que son como las funciones o utilidades q
     1. Esto funciona gracias a la función _timer_, que es un contador en el que cada 0.6 segundos, si se cumple la condición de colisiones, reinicia el nivel.
 Además, aparece en la consola de Godot que has muerto.
 
-![Texto alternativo](/ImagenesREADMEDig/KILLZONE.png)
+![Imagen Killzone](/ImagenesREADMEDig/KILLZONE.png)
 
 * music.tscn
 
@@ -97,7 +97,7 @@ La característica escena del personaje jugable.
       1. Esto es, que dentro de los sprites del personaje se encuentran varios _'frames'_ del personaje para que cuando haga cualquier cosa (quedarse quieto, moverse, saltar...), tenga una _'animación'_ (cambio constante de frames).
   2. También se añaden las colisiones principales del personaje, que son las mismas que en la escena _game.tscn_.
 
-![Texto alternativo](/ImagenesREADMEDig/KNIGHT.png)
+![Imagen Knight](/ImagenesREADMEDig/KNIGHT.png)
 
 * slime.tscn
 
@@ -123,7 +123,7 @@ Esta es con diferencia la escena más compleja y larga. Veamos sus funciones y c
 7. Añade la referencia al Slime, el cuál se explica más detalladamente en su propia escena.
 8. Por último, también se observan las etiquetas que hay a lo largo del camino, que se pueden editar en el panel de la derecha el texto.
 
-![Texto alternativo](/ImagenesREADMEDig/LABEL.png)
+![Imagen Label](/ImagenesREADMEDig/LABEL.png)
 ---
 
 
@@ -145,7 +145,7 @@ En esta carpeta se encuentra las especificaciones de algunas mecánicas del jueg
 2. La función de este Script, es muy simple: cuando la función _add_point()_ suma 1, mientras que la variable previamente creada y reiniciada _var_ no supere el número 9, que son el máximo de monedas del nivel, aumenta el contador de _var_.
      1. El mensaje que saldrá al final del nivel con el recuento de monedas será igual a la condición en la que se encuentre presente la variable.
   
-![Texto alternativo](/ImagenesREADMEDig/SCORELABEL.png)
+![Imagen ScoreLabel](/ImagenesREADMEDig/SCORELABEL.png)
 
 * killzone.gd
 
@@ -205,7 +205,7 @@ Vamos a ver por encima cómo trabajar con él:
      2. Se pueden modificar los tamaños y las formas, para que por ejemplo el puente sea más fino.
 4. Los personajes y monedas se encuentran en la layer _"Background"_. El resto del mapa, en _"Mid"_.
 
-![Texto alternativo](/ImagenesREADMEDig/COLISIONES.png)
+![Imagen Colisiones](/ImagenesREADMEDig/COLISIONES.png)
 
 ___
 
